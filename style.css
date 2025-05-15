@@ -1,35 +1,48 @@
 *{
-    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+header {
+    background-color: #343148;
+    color: #d7c49e;
+    padding: 20px 0;
+    text-align: center;
 }
-li{
-    list-style: none; display: inline-block;
-}
-li a{
-    color: #d7c49e; font-size: 18px; font-weight: bold; margin-right: 25px;
-}
+
 .navbar{    
-    background:#343148ff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding-right: 15px; padding-left: 15px;
+    background:#343148ff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 .navdiv{
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
 }
+
 .logo a {
-font-size: 28px;
-font-weight: bold;
-letter-spacing: 1px;
-color: #d7c49e;
-}
-footer {
-background-color: #343148;
-color: #d7c49e;
-text-align: center;
-padding: 20px 0;
-margin-top: 40px;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #d7c49e;
+    text-decoration: none;
 }
 .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 20px;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+li{
+    list-style: none; 
+    display: inline-block;
+}
+li a{
+    color: #d7c49e; 
+    font-size: 18px; 
+    font-weight: bold; 
+    margin-right: 25px;
 }
 h1{
     color: #d7c49e;
