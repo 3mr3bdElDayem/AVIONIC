@@ -1,398 +1,59 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - AVIONIC</title>
-    <meta name="description" content="Contact AVIONIC">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            color: #343148ff;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        /* Navigation Styles from original website */
-        *{
-            text-decoration: none;
-        }
-        .navbar{
-            background:#343148ff; font-family: 'Times New Roman', Times, serif; padding-right: 15px; padding-left: 15px;
-        }
-        .navdiv{
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .logo a{
-            font-size: 39px; font-weight: 600; color: #d7c49eff;
-        }
-        li{
-            list-style: none; display: inline-block;
-        }
-        li a{
-            color: white; font-size: 18px; font-weight: bold; margin-right: 25px;
-        }
-        .footer-nav a{
-            color: #d7c49eff;
-        }
-        .footer-navigation{
-            color: #d7c49eff;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .contact-section {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 40px 0;
-            gap: 30px;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-form {
-            flex: 2;
-            min-width: 400px;
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1, h2 {
-            margin-bottom: 20px;
-            color: #343148ff;
-        }
-        
-        .info-item {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .icon {
-            width: 40px;
-            height: 40px;
-            background-color: #d7c49eff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: #343148ff;
-            font-weight: bold;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #343148ff;
-        }
-        
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: #f9f9f9;
-            font-size: 16px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        button {
-            background-color: #343148ff;
-            color: #d7c49eff;
-            border: none;
-            padding: 14px 30px;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        button:hover {
-            background-color: #d7c49eff;
-            color: #343148ff;
-        }
-        
-        .social-media {
-            margin-top: 30px;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background-color: #343148ff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #d7c49eff;
-            font-size: 18px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            background-color: #d7c49eff;
-            color: #343148ff;
-            transform: translateY(-3px);
-        }
-        
-        .map {
-            margin-top: 40px;
-            border-radius: 8px;
-            overflow: hidden;
-            height: 300px;
-            background-color: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #343148ff;
-            color: #d7c49eff;
-        }
-        
-        /* Footer styles matching original site */
-        footer {
-            background-color: #343148ff;
-            color: #d7c49eff;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-        
-        .footercontent {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footersection {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 20px;
-        }
-        
-        .footersection h3 {
-            margin-bottom: 15px;
-            color: #d7c49eff;
-        }
-        
-        .footersection ul {
-            padding-left: 0;
-        }
-        
-        .footersection li {
-            display: block;
-            margin-bottom: 8px;
-        }
-        
-        .footersection a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .contact-section {
-                flex-direction: column;
-            }
-            
-            .contact-info, .contact-form {
-                min-width: 100%;
-            }
-            
-            .footercontent {
-                flex-direction: column;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header & Navigation matching original site -->
-    <header>
+    <head>
+        <title>Blog Posts</title>
         <nav class="navbar">
             <div class="navdiv">
-                <div class="logo"><h1><a href="#">AVIONIC</a></h1></div>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="blog.html">All Posts</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <h1>Contact Me</h1>
-        
-        <div class="contact-section">
-            <div class="contact-info">
-                <h2>Get In Touch</h2>
-                
-                <div class="info-item">
-                    <div class="icon">📍</div>
-                    <div>
-                        <h3>Location</h3>
-                        <p>City, Country</p>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                    <div class="icon">📱</div>
-                    <div>
-                        <h3>Phone</h3>
-                        <p>(+123) 456-7890</p>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                    <div class="icon">✉️</div>
-                    <div>
-                        <h3>Email</h3>
-                        <p>contact@avionic.com</p>
-                    </div>
-                </div>
-                
-                <div class="info-item">
-                    <div class="icon">⏰</div>
-                    <div>
-                        <h3>Response Time</h3>
-                        <p>Within 24-48 hours</p>
-                    </div>
-                </div>
-                
-                <div class="social-media">
-                    <h3>Connect With Me</h3>
-                    <div class="social-icons">
-                        <a href="https://github.com/3mr3bdElDayem" target="_blank" class="social-icon">GH</a>
-                        <a href="https://www.linkedin.com/in/3mra7mdd/" target="_blank" class="social-icon">LI</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="contact-form">
-                <h2>Send Me A Message</h2>
-                
-                <form>
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" placeholder="Enter your name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Enter your email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <select id="subject">
-                            <option value="general">General Inquiry</option>
-                            <option value="collaboration">Collaboration Opportunity</option>
-                            <option value="project">Project Proposal</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" placeholder="Type your message here..." required></textarea>
-                    </div>
-                    
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-    <!-- New Intel-style footer -->
-    <footer class="intel-style-footer">
-        <div class="footer-main">
-            <div class="footer-logo">
-                <a href="home.html" class="logo-link">AVIONIC</a>
-            </div>
-            <div class="footer-social">
-                <a href="#" class="social-link"><span class="social-icon">f</span></a>
-                <a href="#" class="social-link"><span class="social-icon">X</span></a>
-                <a href="https://www.linkedin.com/in/3mra7mdd/" class="social-link"><span class="social-icon">in</span></a>
-                <a href="#" class="social-link"><span class="social-icon">YT</span></a>
-                <a href="#" class="social-link"><span class="social-icon">IG</span></a>
-            </div>
-        </div>
-        
-        <div class="footer-navigation">
-            <nav class="footer-nav">
-                <a href="about.html">About AVIONIC</a>
-                <a href="contact.html">Contact</a>
-                <a href="blog.html">Blog</a>
-                <a href="#">Projects</a>
-                <a href="#">Services</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Resources</a>
-                <a href="#">Privacy Policy</a>
+            <div class="logo"><h1><a href="home.html">AVIONIC</a></h1></div>
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="blog.html" target="_blank">Blog Posts</a></li>
+                <li><a href="contact.html" target="_blank">Contact</a></li>
+            </ul>
             </nav>
+        </nav>
+
+    </head>
+    <body>
+        <main>
+            <link rel="stylesheet" href="style.css">
+            <section>
+                <article>
+                    <h2><a href="blogpost1.html">What is AVIONIC ?</a></h2>
+                    <address class="addr" >
+                        Written by Amr AbdElDayem
+                        <br><time datetime="2025-05-10">May 10, 2025</time>
+                    </address>
+                    <p><h4>Avionics (a portmanteau of aviation and electronics) are the electronic systems used on aircraft. Avionic systems include communications, navigation, the display and management of multiple systems, and the hundreds of systems that are fitted to aircraft to perform individual functions. These can be as simple as a searchlight for a police helicopter or as complicated as the tactical system for an airborne early warning platform.</h4></p>
+                    <h2>Modern Avionics</h2>
+                    <p><h4>Avionics plays a heavy role in modernization initiatives like the Federal Aviation Administration's (FAA) Next Generation Air Transportation System project in the United States and the Single European Sky ATM Research (SESAR) initiative in Europe. The Joint Planning and Development Office put forth a roadmap for avionics in six areas:</h4></p>
+                    <ul>
+                        <li>Published Routes and Procedures: Improved navigation and routing</li><br>
+                        <li>Negotiated Trajectories: Adding data communications to create preferred routes dynamically</li><br>
+                        <li>Delegated Separation: Enhanced situational awareness in the air and on the ground</li><br>
+                        <li>Low Visibility/Ceiling Approach/Departure: Allowing operations with weather constraints with less ground infrastructure</li><br>
+                        <li>Surface Operations: To increase safety in approach and departure</li><br>
+                        <li>ATM Efficiencies: Improving the air traffic management (ATM) process</li><br>
+                    </ul>                    
+                    <img class="av" src="av.png" alt="">
+            </section>
+        </main>
+    
+    
+    </body>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Amr AbdElDayem. All Rights Reserved.</p>
         </div>
-        
-        <div class="footer-legal">
-            <div class="legal-links">
-                <a href="#">© Amr AbdElDayem</a>
-                <a href="#">Terms of Use</a>
-                <a href="#">Privacy</a>
-                <a href="#">Cookies</a>
-                <a href="#">Site Map</a>
-            </div>
-            
-            <div class="disclaimers">
-                <p>AVIONIC technologies require modern browsers for optimal experience. // Performance may vary by device, browser, and connection. // See our complete <a href="#">legal notices and disclaimers</a>.</p>
-            </div>
-        </div>
+        <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        main {
+            flex: 1;
+        }
+        </style>
     </footer>
-</body>
 </html>
